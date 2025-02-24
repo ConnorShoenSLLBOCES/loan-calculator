@@ -1,0 +1,52 @@
+Begin (main() function)
+    print Application Header
+    [Get User Input]
+    prince = get_prince()
+    an_rate = get_an()
+    years = get_years()
+
+    [Calculate Monthly Payment]
+    monthly payment = calc_month_pay(prince, an_rate, years)
+
+    [Display results in formated summary]
+    dis_res(prince, an_rate, years, month_pay)
+
+function get_prince()
+    loop until valid input
+        prompt "enter the loan's principal amount($): "
+        if input is a valid positive number:
+            return prince
+        else
+            error message
+
+function get_an()
+    loop until valid input
+        prompt "enter the loan's anual intrest rate(in %. ex. 5.0 = 5%): "
+        if input is a valid positive number:
+            return an_rate
+        else
+            error message
+
+function get_years()
+    loop until valid input:
+        prompt "enter the loan term in years: "
+        if input is a valid positive integer:
+            return years
+        else:
+            error message
+
+function calc_month_pay(prince, an_rate, years):
+    month_rate = an_rate / 12 / 100
+    pay_num = years * 12
+    monthly_pay = (principal * month_rate) / (1 - (1 + month_rate) ^ (-pay_num))
+    return month_pay
+
+function dis_res(prince, an_rate, years, month_pay):
+    total_pay = years * 12
+    total_am = month_pay * total_pay
+    print "loan payment summary:"
+    print "loan principal: $" + formated prince
+    print "loan anual intrest: " + formated an_rate + "%"
+    print "loan term: " + formated years + "years"
+    print "loan monthly payment: $" + formated month_pay
+    print "loan total payment: $" + formated total_pay
