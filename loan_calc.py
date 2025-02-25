@@ -33,7 +33,7 @@ def get_years():
 def calc_month_pay(prince, an_rate, years):
     month_rate = an_rate / 12 / 100
     pay_num = years * 12
-    month_pay = (prince * month_rate) / (1 - (1 + month_rate)^(-pay_num))
+    month_pay = (float(prince) * float(month_rate)) / (1.0 - (1.0 + float(month_rate)) ** float(-pay_num))
     return month_pay
 
 def dis_res(prince, an_rate, years, month_pay):
