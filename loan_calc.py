@@ -44,6 +44,6 @@ def dis_res(prince, an_rate, years, month_pay):
     print (f"\nLoan Anual Intrest: {an_rate:.1f}%")
     print (f"\nLoan Term: {years} years")
     print (f"\nLoan Monthly Payment: ${month_pay:.2f}")
-    print (f"\nLoan total payment: ${total_am}")
+    print (f"\nLoan total payment: ${total_am:.2f}")
 
 main()
